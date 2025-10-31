@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cara Membuat Kartu Surat Keterangan Pindah Tempat</title>
+    <link rel="icon" href="img/logo/logo.png" type="image/png" sizes="110x50">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="/style/layanan.css">
+</head>
+
+<body>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <canvas id="networkCanvas"></canvas>
+        <div>
+            <h1>Cara Membuat Surat Keterangan Pindah Tempat</h1>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <!-- Langkah-Langkah Pengurusan Surat Keterangan Pindah Tempat -->
+    <section class="content-section">
+        <div class="container position-relative" style="z-index: 1;">
+            <h2 class="mb-4">Pengurusan Surat Keterangan Pindah Tempat</h2>
+            <p>Ikuti langkah-langkah berikut untuk pengajuan pembuatan Surat Keterangan Pindah Tempat:</p>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="number">1</div>
+                            <i class="fas fa-envelope icon"></i>
+                            <h5>Surat Pengantar dari Desa</h5>
+                        </div>
+                        <p>Dapatkan surat pengantar dari desa tempat tinggal Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="number">2</div>
+                            <i class="fas fa-users icon"></i>
+                            <h5>Kartu Keluarga (KK)</h5>
+                        </div>
+                        <p>Bawa KK asli dan fotokopi sebagai dokumen pendukung.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="number">3</div>
+                            <i class="fas fa-id-card icon"></i>
+                            <h5>Kartu Tanda Penduduk (KTP)</h5>
+                        </div>
+                        <p>Siapkan KTP asli dan fotokopi untuk pengajuan.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="number">4</div>
+                            <i class="fas fa-file-alt icon"></i>
+                            <h5>Formulir Isian</h5>
+                        </div>
+                        <p>Isi formulir yang memuat alamat tujuan dari Desa/Kelurahan tempat Anda tinggal.</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Section: Download PDF -->
+    <section class="content-section">
+        <div class="container position-relative" style="z-index: 1;">
+            <h2 class="mb-4">Unduh Format Pembuatan Surat Keterangan Pindah Tempat</h2>
+            <p>Silakan unduh file PDF di bawah ini untuk melihat format resmi pembuatan Surat Keterangan Pindah Tempat</p>
+            
+            <div class="text-center">
+                <a href="/pdf/FORM_KK.pdf" class="btn btn-primary btn-lg" download>
+                    <i class="fas fa-file-pdf"></i> Download Format PDF
+                </a>
+            </div>
+
+            <div class="mt-5">
+                <h4>Keterangan Format PembuatanSurat Keterangan Pindah Tempat:</h4>
+                <ul>
+                    <li>Isi semua data sesuai dengan dokumen resmi yang dimiliki.</li>
+                    <li>Pastikan seluruh dokumen pendukung (KTP, Surat Pengantar, dll.) sudah dilengkapi sebelum pengajuan.</li>
+                    <li>Dokumen dalam format PDF dapat dicetak jika diperlukan.</li>
+                    <li>Untuk dokumen yang harus diisi manual, gunakan tinta hitam dan huruf kapital.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© <script>document.write(new Date().getFullYear());</script> Kecamatan Labang - All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load Navbar
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("navbar.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("navbar-placeholder").innerHTML = data;
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+
+        // Network Animation
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let width, height;
+
+        function init() {
+            width = canvas.width = canvas.offsetWidth;
+            height = canvas.height = canvas.offsetHeight;
+
+            particles = [];
+            for (let i = 0; i < 50; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: (Math.random() - 0.5) * 2,
+                    radius: 3
+                });
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach((p, i) => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+                ctx.fill();
+
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 100})`;
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(draw);
+        }
+
+        window.addEventListener('resize', init);
+        init();
+        draw();
+    </script>
+</body>
+
+</html>

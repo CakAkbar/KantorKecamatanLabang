@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Struktur Section */
+.struktur-section {
+    background: linear-gradient(180deg, #00509E, #003D99);
+    color: white;
+    padding: 60px 0;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.card-img-top {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #00509E;
+}
+
+/* Table Styling */
+.table {
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.table-hover tbody tr:hover {
+    background: rgba(0, 80, 158, 0.1);
+    color: #00509E;
+}
+
+/* Footer */
+footer {
+    background: #002855;
+    color: white;
+    padding: 15px 0;
+}

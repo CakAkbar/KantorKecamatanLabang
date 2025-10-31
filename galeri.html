@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kegiatan - Kecamatan Labang</title>
+    <link rel="icon" href="img/logo/logo.png" type="image/png" sizes="110x50">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .gallery-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-title {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: #333;
+        }
+
+        .gallery-text {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .btn-view {
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .btn-view:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Muat navbar
+            fetch("navbar.html")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById("navbar-placeholder").innerHTML = data;
+    
+                    // Re-inisialisasi komponen Bootstrap setelah navbar dimuat
+                    const dropdowns = document.querySelectorAll('.dropdown-toggle');
+                    dropdowns.forEach(dropdown => {
+                        new bootstrap.Dropdown(dropdown);
+                    });
+    
+                    const toggler = document.querySelector('.navbar-toggler');
+                    if (toggler) {
+                        toggler.addEventListener('click', () => {
+                            const navbarCollapse = document.getElementById('navbarNav');
+                            navbarCollapse.classList.toggle('show');
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        });
+    </script>
+    
+
+    <!-- Gallery Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Galeri Kegiatan Kecamatan Labang</h2>
+                <p class="text-muted">Dokumentasi berbagai kegiatan yang dilakukan di Kecamatan Labang.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card gallery-card">
+                        <img src="/img/galeri/ktp/2.jpg" alt="Kegiatan 1" class="gallery-img card-img-top">
+                        <div class="card-body">
+                            <h5 class="gallery-title">FOTO KTP</h5>
+                            <p class="gallery-text">Kegiatan Foto KTP adalah sebuah kegitan yang mana proses perekemanan data untuk di lakukan pendataan terhadap KTP yang nantinya akan di buat.</p>
+                            <a href="detail1.html" class="btn btn-view">Lihat Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card gallery-card">
+                        <img src="/img/galeri/ibu/1.jpg" alt="Kegiatan 2" class="gallery-img card-img-top">
+                        <div class="card-body">
+                            <h5 class="gallery-title">DARMA WANITA</h5>
+                            <p class="gallery-text">organisasi yang beranggotakan istri Pegawai Negeri Sipil (PNS) dan istri dari beberapa pihak lainnya.</p>
+                            <a href="detail2.html" class="btn btn-view">Lihat Selengkapnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <p>© <script>document.write(new Date().getFullYear());</script> Kecamatan Labang - All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

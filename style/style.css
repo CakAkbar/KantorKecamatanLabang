@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/background/2.jpg') no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section a {
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-section .btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.hero-section .btn-outline-light {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Services Section */
+.services-section {
+    background: #061d4e;
+    padding: 60px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card {
+    background: #00509e;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    height: 100%; /* Konsisten tinggi card */
+    display: flex;
+    flex-direction: column; /* Agar elemen di dalam card sejajar vertikal */
+    justify-content: space-between; /* Jarak antar elemen diatur */
+    align-items: center; /* Elemen di tengah secara horizontal */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service-card a {
+    text-decoration: none;
+    color: white; /* Warna font tetap putih meskipun link */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.service-card a:hover {
+    color: #cce7ff; /* Warna lebih cerah saat hover */
+}
+
+.service-card i {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.service-card h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.service-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.service-card .arrow {
+    margin-top: 15px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease-in-out;
+}
+
+.service-card:hover .arrow {
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    .service-card i {
+        font-size: 40px;
+    }
+
+
+}
